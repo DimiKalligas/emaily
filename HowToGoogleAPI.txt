@@ -1,0 +1,11 @@
+To create separate project for PRODUCTION:
+1. visit: console.developers.google.com
+2. select project -> new project
+3. select project
+4. enable API -> google+ -> enable Google+ API
+5. Credentials -> Create Credentials -> OAUTH client Id
+6. Configure Consent screen
+7. Application type: web application
+7. Create client ID: in Authorized redirect URI's, enter the result of heroku open + /auth/google/callback, eg https://nameless-falls-11797.herokuapp.com/auth/google/callback
+8. in Authorized Javascript Origins: insert just the domain: https://nameless-falls-11797.herokuapp.com (SOS: no slash at the end!)
+9. Create
