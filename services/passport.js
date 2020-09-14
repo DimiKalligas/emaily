@@ -30,7 +30,8 @@ passport.deserializeUser((id, done) => { // id is the user.id^ that we stuffed i
 passport.use(new GoogleStrategy({
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientSecret,
-    callbackURL: '/auth/google/callback' // where the user will be redirected to, after they are granted permission from Google
+    callbackURL: '/auth/google/callback', // where the user will be redirected to, after they are granted permission from Google
+    proxy: true // για να μπορέσει να δουλέψει στο Heroku, που παίζει με proxy
 }, (accessToken, refreshToken, profile, done) => {
     User.findOne({ googleId: profile.id })
         .then(result => {

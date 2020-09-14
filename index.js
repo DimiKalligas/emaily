@@ -17,7 +17,7 @@ const app = express()
 // Passport: pull User ID out of cookie data (precisely: out of req.session) - so, Passport is a property of session
 // deserialize User: our function to turn User ID into a user
 // TΕΛΙΚΟ ΑΠΟΤΕΛΕΣΜΑ ΤΟΥ AUTHENTICATION: User model instance added to req object as 'req.user'
-app.use(
+app.use(  // αν θέλαμε session, θα λέγαμε app.use(session({ store: sessionStore, cookie: maxAge: κλπ}))
     cookieSession({
         maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
         keys: [keys.cookieKey] // encrypt cookie with this key
