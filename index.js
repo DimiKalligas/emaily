@@ -29,7 +29,6 @@ app.use(passport.session())
 
 // otherwise: const authRoutes = require('./routes/authRoutes') 
 require('./routes/authRoutes')(app)
-console.log('google scope is ', authRoutes.scope)
 
 const PORT = process.env.PORT || 5000
 app.listen(PORT)
